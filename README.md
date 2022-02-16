@@ -1,2 +1,2 @@
 # image-processing-aws-udacity
-Image Processing Project on AWS - Udacity Assignment
+Image Processing System on AWS - Udacity Assignment - Cloud Developer Nanodegree
