@@ -4,13 +4,10 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
 
 (async () => {
 
-  // Init the Express application
   const app = express();
 
-  // Set the network port
   const port = process.env.PORT || 8082;
   
-  // Use the body parser middleware for post requests
   app.use(bodyParser.json());
 
   app.get("/filteredimage", async (req, res) => {
@@ -22,7 +19,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
     }
     const imageFile: string = await filterImageFromURL(image_url);
     res.sendFile(imageFile);
-    res.on("finish", () => deleteLocalFiles([image_url]));
+    res.on("finish", () => deleteLocalFiles([imageFile]));
   });
   
   app.get("/", async (req, res) => {
